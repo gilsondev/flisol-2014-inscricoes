@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 DJANGO_APPS = (
+    'bootstrap_admin', #  override templates
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
