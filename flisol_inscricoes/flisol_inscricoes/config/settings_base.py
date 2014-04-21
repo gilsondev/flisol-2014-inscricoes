@@ -40,11 +40,14 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
-    'south',  # Database migration helpers:
+    'south',  # Database migration helpers
+    'bootstrap3',
 )
 
 # Apps specific for this project go here.
-LOCAL_APPS = ()
+LOCAL_APPS = (
+    'flisol_inscricoes.inscricoes',
+)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -73,6 +76,10 @@ DATABASES = {
     }
 }
 
+# Templates
+
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -91,3 +98,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
