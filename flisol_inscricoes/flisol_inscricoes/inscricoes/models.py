@@ -16,6 +16,17 @@ class Interesse(models.Model):
         ordering = ['label']
 
 
+class Oficina(models.Model):
+    titulo = models.CharField('Título', max_length=80)
+
+    def __unicode__(self):
+        return self.titulo
+
+    class Meta:
+        verbose_name = 'Oficina'
+        verbose_name_plural = 'Oficinas'
+
+
 class Participante(models.Model):
     nome = models.CharField('Nome', max_length=140)
     representacao = models.CharField('Instituição / Empresa / Comunidade',
@@ -26,6 +37,19 @@ class Participante(models.Model):
                                         verbose_name='Interesses')
     outros_interesses = models.CharField('Outros interesses', max_length=140,
                                          blank=True)
+    oficinas = models.ManyToManyField(
+        'inscricoes.Oficina',
+        verbose_name='Oficinas',
+        blank=True,
+        null=True,
+        help_text='(Vagas Limitadas) Marque somente se quiser participar.'
+    )
+    campeonato_games = models.BooleanField(
+        'Vai participar do campeonato de games?',
+        blank=True,
+        default=False,
+        help_text='(Vagas Limitadas) Marque somente se quiser participar.'
+    )
 
     criacao = models.DateTimeField('Data de cadastro', auto_now_add=True)
     atualizacao = models.DateTimeField('Data de atualização', auto_now=True)
