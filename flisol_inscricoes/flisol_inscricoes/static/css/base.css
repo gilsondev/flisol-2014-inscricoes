@@ -8,6 +8,13 @@ body {
 .navbar .navbar-brand img {
     height: 45px;
 }
+.navbar .brand-1 {
+    padding-top: 15px;
+}
+
+.flisol-logo {
+    text-align: center;
+}
 
 .footer {
     text-align: right;

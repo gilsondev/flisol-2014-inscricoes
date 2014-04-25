@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load bootstrap3 %}
+{% load bootstrap3 static %}
 
 {% block title %}Inscrição para o FLISOL{% endblock title %}
 
@@ -9,8 +9,11 @@
     <div class="col-md-6">
       <div class="panel panel-default">
         <!-- Default panel contents -->
-        <div class="panel-heading">Inscrição para o FLISOL 2014 - Rondonópolis</div>
+        <div class="panel-heading">Formulário de Inscrição</div>
         <div class="panel-body">
+          <div class="flisol-logo">
+            <img src="{% static 'images/logo-flisol.png' %}">
+          </div>
           <form action="." method="post" class="form">
             {% csrf_token %}
             {% bootstrap_form form %}
