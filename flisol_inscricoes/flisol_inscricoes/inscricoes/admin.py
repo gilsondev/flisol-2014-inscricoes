@@ -8,7 +8,12 @@ class InteresseAdmin(admin.ModelAdmin):
 
 
 class ParticipanteAdmin(admin.ModelAdmin):
-    pass
+    date_hierarchy = 'criacao'
+    list_display = ('nome', 'representacao', 'email', 'telefone',
+                    'campeonato_games', 'criacao', 'atualizacao')
+    list_filter = ('nome', 'representacao', 'outros_interesses',
+                   'campeonato_games', 'criacao', 'atualizacao')
+    search_fields = ('nome', 'representacao', 'email')
 
 
 class OficinaAdmin(admin.ModelAdmin):
